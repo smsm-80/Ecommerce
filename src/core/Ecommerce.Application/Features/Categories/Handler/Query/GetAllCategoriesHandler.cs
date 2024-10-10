@@ -1,4 +1,6 @@
-﻿
+﻿using MediatR;
+using Ecommerce.Application.Features.Products.Request.Query;
+
 namespace Ecommerce.Application.Features.Handle.Query;
 
 public class GetAllCategoriesHandler : IRequestHandler<GetAllCategoriesRequest, List<CategoryDTO>>
