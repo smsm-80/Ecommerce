@@ -1,12 +1,12 @@
-﻿
+﻿using Ecommerce.Application.DTOs.EntitiesDto.Product;
 
 namespace Ecommerce.Application.MappingProfiles;
 
 public class ProductMappingProfile:Profile
 {
-    // Configure Automapper
-    ProductMappingProfile()
-    {
-        CreateMap<Product, ProductDTO>().ReverseMap();
-    }
+	public ProductMappingProfile()
+	{
+		CreateMap<Product, ProductDto>().ReverseMap();
+	}
+
 }

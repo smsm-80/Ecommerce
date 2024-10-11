@@ -1,12 +1,19 @@
 ﻿using AutoMapper;
+using Ecommerce.Application.DTOs.EntitiesDto.Category;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Ecommerce.Application.MappingProfiles;
-public class CategoryMappingProfile:Profile
+namespace Ecommerce.Application.MappingProfiles
 {
-    public CategoryMappingProfile() 
+    public class CategoryMappingProfile:Profile
     {
-        // Configure Automapper
-        CreateMap<Category, CategoryDTO>().ReverseMap();
+        public CategoryMappingProfile()
+        {
+            // Configure Automapper 
+            CreateMap<Category,CategoryDto>().ReverseMap();
+        }
     }
-
 }

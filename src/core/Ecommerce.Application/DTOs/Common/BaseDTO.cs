@@ -1,6 +1,13 @@
-﻿namespace Ecommerce.Application.DTOs.Common;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-public class BaseDTO<T>
+namespace Ecommerce.Application.DTOs.Common
 {
-    public T Id { get; set; }
-} 
+    public abstract class BaseDto<T>
+    {
+        public T Id { get; set; }
+    }
+}
