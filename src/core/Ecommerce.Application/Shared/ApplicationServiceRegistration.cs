@@ -1,11 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-
+using FluentValidation;
 namespace Ecommerce.Application.Shared
 {
     public static class ApplicationServiceRegistration
@@ -14,7 +9,7 @@ namespace Ecommerce.Application.Shared
         {
             //Configure AutoMapper && MediatR && Fluient Validation
             services.AddAutoMapper(typeof(CategoryMappingProfile));
-            services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
             services.AddValidatorsFromAssemblies(AppDomain.CurrentDomain.GetAssemblies());
         }
     }

@@ -1,10 +1,5 @@
 ﻿using Ecommerce.Application.Exceptions;
 using Ecommerce.Application.Features.Products.Requests.Commands;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ecommerce.Application.Features.Products.Handlers.Command
 {
@@ -24,6 +19,13 @@ namespace Ecommerce.Application.Features.Products.Handlers.Command
 
             await _repository.DeleteAsync(oldProduct.Id);
             return Unit.Value;
+        }
+
+        async Task IRequestHandler<DeleteProductCommand>.Handle(DeleteProductCommand request, CancellationToken cancellationToken)
+        {
+            var oldProduct = await _repository.GetAsync(request.Id);
+            if (oldProduct is null)
+                throw new NotFoundExecption(nameof(Product), request.Id);
         }
     }
 }

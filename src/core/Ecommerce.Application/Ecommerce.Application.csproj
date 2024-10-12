@@ -7,17 +7,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Features\Products\Handler\**" />
+    <Compile Remove="Features\Products\Request\**" />
+    <EmbeddedResource Remove="Features\Products\Handler\**" />
+    <EmbeddedResource Remove="Features\Products\Request\**" />
+    <None Remove="Features\Products\Handler\**" />
+    <None Remove="Features\Products\Request\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Ecommerce.Domain\Ecommerce.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.10.0" />
     <PackageReference Include="MediatR" Version="12.4.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Features\Products\Handler\Commend\" />
-    <Folder Include="Features\Products\Request\Commend\" />
   </ItemGroup>
 
 </Project>
