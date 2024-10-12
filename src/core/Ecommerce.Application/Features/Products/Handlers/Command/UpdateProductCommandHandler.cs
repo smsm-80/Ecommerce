@@ -27,7 +27,7 @@ namespace Ecommerce.Application.Features.Products.Handlers.Command
             if (validatorResult.IsValid == false)
                 throw new ValidationExecption(validatorResult);
 
-            var oldProduct = await _repository.GetAsync(request.ProductDto.Id);
+            var oldProduct = await _repository.GetAsync(request.ProductDto.ID);
             var res = _mapper.Map(request.ProductDto, oldProduct);
             await _repository.UpdateAsync(res);
             return Unit.Value;

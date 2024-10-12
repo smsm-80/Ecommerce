@@ -26,7 +26,7 @@ namespace Ecommerce.Application.Features.Categories.Handlers.Command
             if (validatorResult.IsValid == false)
                 throw new ValidationExecption(validatorResult);
 
-            var oldCategory = await _repository.GetAsync(request.CategoryDto.Id);
+            var oldCategory = await _repository.GetAsync(request.CategoryDto.ID);
             var res = _mapper.Map(request.CategoryDto, oldCategory);
             await _repository.UpdateAsync(res);
             return Unit.Value;
