@@ -48,9 +48,10 @@ namespace Ecommerce.Api.Controllers
         [HttpDelete("delete-category-by-id/{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var command = new DeleteCategoryCommand { Id = id };
-            var response = await _mediator.Send(command);
+            var command = new DeleteCategoryCommand { ID = id };
+             await _mediator.Send(command);
             return NoContent();
-        }
+        } 
+
     }
 }

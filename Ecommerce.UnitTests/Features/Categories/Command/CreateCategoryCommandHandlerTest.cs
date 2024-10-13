@@ -31,7 +31,7 @@ namespace Ecommerce.UnitTests.Features.Categories.Command
             _mapper = mapperconfig.CreateMapper();
             _categoryDto = new CategoryDto
             {
-                Id = 4,
+                ID = 4,
                 Name = "cat_fout"
             };
         }

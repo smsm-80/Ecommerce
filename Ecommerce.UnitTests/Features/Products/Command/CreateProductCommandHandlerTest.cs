@@ -34,7 +34,7 @@ namespace Ecommerce.UnitTests.Features.Products.Command
             _hadler = new CreateProductCommandHandler(_moqrepo.Object, _mapper,_sender);
             _productDto = new ProductDto
             {
-                Id = 3,
+                ID = 3,
                 Name = "p_3",
                 Price = 20,
                 CategoryId = 1
